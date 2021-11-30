@@ -1,0 +1,559 @@
+.border-bottom-grey {border-bottom: 1px solid #efefef;}
+.whyServiceWrap + .sectionRedtxt {margin-top: 65px;}
+.technologiessubdiv .secTitleDesc {margin: 50px 0px 70px 50px;}
+.technologiessubdiv .cstbtn {margin: 0px 0px 0px 80px;}
+.sectionmerchants-row {display: flex; margin: 0px 0px 50px 0px;}
+.sectionmerchants-row .sectionmerchants-blog .merchants-heading {color: #212121; font-weight: 600; font-size: 20px; line-height: 1.3em; display: block; }
+.sectionmerchants-row .sectionmerchants-blog .merchants-number {color: #D11D3A; font-weight: 500; font-size: 40px; line-height: 1.5em; display: block;}
+.sectionmerchants-row .sectionmerchants-blog { position: relative; padding-left: 30px; padding-right: 15px; -ms-flex: 1 1 auto; flex: 1 1 auto; } 
+.sectionmerchants-row .sectionmerchants-blog:before {content: "\f067"; font-family: FontAwesome; color: #D11D3A; font-size: 16px; position: absolute; left: 0px; top: 0px;}
+
+/*Popup Css Start*/
+.popupMain {position: fixed;left: 0;right: 0;top: 0;bottom: 0;z-index: 10000;text-align: center;overflow: auto;opacity: 0;visibility: hidden;transition: 300ms all;-webkit-transition: 300ms all;padding: 15px;}
+.popupMain:before{content:'';display: inline-block;vertical-align: middle;margin-left: -5px;height: 100%;}
+.popVisible {opacity: 1;visibility: visible;}
+.pop_overlayer{position: fixed;left: 0;right: 0;top: 0;bottom: 0;background-color: rgba(0, 0, 0, 0.8);opacity: 0;visibility: hidden;transition: 300ms all;-webkit-transition: 300ms all;}
+.popVisible .pop_overlayer{opacity: 1;visibility: visible;}
+.popBody{display: inline-block;vertical-align: middle;text-align: left;position: relative;z-index: 99;transition: 600ms all;-webkit-transition: 600ms all;background: #212121;max-width: 750px;width: 100%;height: auto;/*padding: 20px;*/border-radius: 7px;-moz-transform: translateY(-50%);-ms-transform: translateY(-50%);-webkit-transform: translateY(-50%);transform: translateY(-50%);}
+.popBody:before{position: absolute;left: 0;right: 0;top: 50px;bottom: 50px;background-color: #fff;content: '';z-index: -1;}
+.popVisible .popBody{-moz-transform: translateY(0);-ms-transform: translateY(0);-webkit-transform: translateY(0);transform: translateY(0);}
+.popclick{cursor: pointer;}
+.popDetails{max-height: calc(100vh - 60px); overflow-y: auto;}
+.popDetails p{font: 400 16px/24px Lato, sans-serif; color: #000 }
+.popDetails.cmsPage{padding: 0;}
+.popDetails.cmsPage h1, .popDetails.cmsPage h2, .popDetails.cmsPage h3,.popDetails.cmsPage h4,.popDetails.cmsPage h5,.popDetails.cmsPage h6{color:#553692;margin-bottom: 15px;}
+.popDetails p + p{margin-top: 15px;}
+.closePopup{position: absolute;right: -10px;top: -10px;width: 25px;height: 25px;z-index: 2;background:#d11d3b;border-radius: 50%;box-shadow: 0 0 8px 1px rgba(0,0,0,0.25);}
+.closePopup:before{position: absolute;content: '';top: 0;right: 0;left: 0;bottom: 0;margin: auto;width: 60%;height: 2px;background: #fff;-moz-transform: rotate(-45deg);-ms-transform: rotate(-45deg);-webkit-transform: rotate(-45deg);transform: rotate(-45deg);}
+.closePopup:after{position: absolute;content: '';top: 0;right: 0;left: 0;bottom: 0;margin: auto;width: 60%;height: 2px;background: #fff;-moz-transform: rotate(45deg);-ms-transform: rotate(45deg);-webkit-transform: rotate(45deg);transform: rotate(45deg);}  
+.poptitle{display: block; padding: 7px 19px;position: relative;}
+.poptitle{display:inline-block;font-weight: 700;font-size: 18px;color: #fff;line-height: 24px;padding: 6px;}
+.pop_bodyFixed{ position: static;left: 0;top: 0;width: 100%;height: 100%;overflow: hidden;}
+.videoPopupDetail{line-height: 0;}
+
+.popupMain.full-height-popup{padding: 0; text-align: right;}
+.full-height-popup .popBody{height: 100vh; overflow-y: auto; max-width: 50%; background-color: #fff; border-radius: 0px;}
+.full-height-popup .closePopup{right: 30px; top: 30px; width: 35px; height: 35px; background: #000; box-shadow: unset;}
+.closePopup:before, .closePopup:after{width: 54%;}
+
+.popTxtDiv{margin: 15% 0; padding: 0 7%; max-width: 630px;}
+.label-black{font-size: 14px; color: #fff; font-weight: 400; text-transform: uppercase; line-height: 30px; padding: 0 25px; border: 1px solid #212121; background-color: #212121; border-radius: 5px 5px 5px 0px; text-align: center; display: inline-block; margin-bottom: 30px; border-radius: 5px;}
+.popTxtDiv .innerPageTitle, .popTxtDiv .innerPageRedtxt{font-size: 40px;}
+.popTxtDiv .innerPageSubTxt{margin: 30px 0 60px;}
+.popTxtDiv .innerPageSubTxt, .popTxtDiv .innerPageSubTxt p, .popTxtDiv .innerPageSubTxt ul li{font-size: 16px;}
+.popThankYou{font-family: 'Playfair Display', serif; text-shadow: 0px 0px 2px rgb(33 33 33 / 22%); color: #fff; font-size: 193rem;}
+.pop-share-req{color: #212121; margin-top: 10%;}
+.pop-share-title{color: #D11D3A; font-size: 16px; line-height: 1.3; margin-bottom: 5px; font-weight: 500;}
+.pop-share-desc{color: #212121; font-size: 30px; line-height: 1.3; font-weight: 500;}
+/*Popup Css End*/
+
+/* Testimonials page start */
+.innerPageSecTitle.paddingBtm_70, .paddingBtm_70{padding-bottom: 70px;}
+.video-iframe-div{position: relative;}
+/*.video-iframe-div:before {content: ''; background: #000; position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto; z-index: 1; opacity: 0.6; }*/
+.play-btn{position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); display: flex; align-items: center; justify-content: center; letter-spacing: 4.56px; color: #FFFFFF; font-size: 12px; text-transform: uppercase; font-weight: 400;    z-index: 1;}
+.play-icon-spn{width: 88px; height: 88px; display: inline-flex; vertical-align: middle; position: relative; background-color: rgba(255,255,255,0.18); border-radius: 100%; align-items: center; justify-content: center; margin-right: 20px;}
+.play-icon{width: 0; height: 0; border-style: solid; border-width: 10px 0 10px 17px; border-color: transparent transparent transparent #d11d3b; margin: 0px 0px 0px 7px; position: relative; z-index: 3;}
+.play-icon-spn:before, .play-icon-spn:after{content:""; border-radius: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); transition: all .4s ease-in-out}
+.play-icon-spn:before{width: 73px; height: 73px; background-color: rgba(255,255,255,0.18); z-index: 1;}
+.play-icon-spn:after{width: 57px; height: 57px; background-color: #fff; z-index: 2;}
+.play-btn:hover .play-icon-spn:before,.play-btn:hover .play-icon-spn:after{width: 100%; height: 100%; background-color: #fff;}
+
+.testimonials-grid{border-top: 1px solid rgb(189 189 189 / 50%);}
+.testimonialSec .testi-author{font-weight: 500;}
+.testimonial-box{max-width: 88%; margin-bottom: 85px;}
+.t-img{margin-bottom: 65px; min-height: 105px; display: flex; align-items: center;}
+.t-comment{margin-bottom: 40px;}
+.testimonialSec.innercommonSpace .testi-detail,.testimonialSec.innercommonSpace .testi-detail p{font-size: 26px; color: #212121; line-height: 42px;}
+.t-comment p{font-size: 22px; color: #212121; line-height: 42px;}
+.testimonialSec.innercommonSpace .testi-img_inner{background-color: #fff;}
+.videoIframe {position: absolute; top: 0; bottom: 0; right: 0; left: 0; width: 100%; height: 100%; background-color: transparent; }
+.videoPoster {position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; background-size: 100%;cursor: pointer;  border: none; background-repeat: no-repeat;background-size: cover;background-position: center; /*text-indent: -999em; */overflow: hidden; opacity: 1; -webkit-transition: opacity 800ms, height 0s; -moz-transition: opacity 800ms, height 0s; transition: opacity 800ms, height 0s; -webkit-transition-delay: 0s, 0s; -moz-transition-delay: 0s, 0s; transition-delay: 0s, 0s; }
+.videoWrapperActive .videoPoster {opacity: 0; height: 0; -webkit-transition-delay: 0s, 800ms; -moz-transition-delay: 0s, 800ms; transition-delay: 0s, 800ms; }
+.video_innerFrm{position: relative; height: 0; margin-bottom: 1rem; padding-bottom: 56.25%; overflow: hidden; margin-bottom: 0;}
+.video_innerFrm iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+/*Latest Video Section Css End*/
+/* Testimonials page end */
+
+/* Portfolio page start */
+.zigzag-main{display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; width: 100%;}
+.zigzag-row{display: -webkit-box; display: -ms-flexbox; display: flex; width: 100%; align-items: center;}
+.zigzag-col{position: relative; width: 100%; min-height: 1px; -webkit-box-flex: 0; -ms-flex: 0 0 50%; flex: 0 0 50%; max-width: 50%;}
+.zigzag-row:nth-child(odd) .zig-txt-col{padding-left: 100px; padding-right: 0px;}
+.zigzag-row:nth-child(even) .zig-txt-col{padding-right: 100px; padding-left: 0px;}
+.zigzag-row:nth-child(even){flex-direction: row-reverse;}
+.zigzag-row:first-child,.zigzag-row:only-child{align-items: flex-start;}
+.zig-txt-col{padding-top: 45px; padding-bottom: 45px;}
+.zigzag-title, .portfolio-title{color: #212121; font-size: 40px; font-weight: 500; line-height: 1.4em; margin-bottom: 50px;}
+.zigzag-title small, .portfolio-title small{font-size: 50%; font-weight: 600; display: block;line-height: 1.3em;}
+.zigzag-desc{font-size: 22px; line-height: 1.8em; font-weight: 400; color: #9E9E9E; margin-bottom: 50px;}
+.greyRound{width: 94px; height: 94px; background-color: #ECECEC; border-radius: 100%; text-align: center; vertical-align: middle; line-height: 90px;position: relative;}
+.greyRound .absoImg{padding:10px;}
+.portfolio-grid{margin-top: 80px; padding-top: 80px; border-top: 1px solid rgb(189 189 189 / 50%);}
+.portfolio-box{max-width: 666px;}
+.portfolio-img{position: relative;/* border: 1px solid #bdbdbd;*/ overflow: hidden;}
+.portfolio-img img{transition: all .4s ease-in-out;}
+.portfolio-txt{padding: 50px 20px;}
+.portfolio-txt .portfolio-title{margin: 0px;}
+.portfolio-title a{display: block; font-size: inherit; line-height: inherit; color: inherit;}
+.portfolio-title a small{color: #212121;}
+.portfolio-detaillike a{ font-size: 16px; line-height:1.3em; font-weight: 600; margin: 0; color:#D11D3A;} 
+.portfolio-title + .portfolio-detaillike{margin-top: 10px;}
+.greyRound + .portfolio-detaillike{margin-top: 20px;}
+/* Portfolio page end */
+
+/* Page not found start */
+.page-not-found-sec{position: relative;}
+.page-not-found-sec:before{content: attr(data-text); font-family: 'Playfair Display', serif; color: #fff; text-shadow: 0px 0px 2px rgb(33 33 33 / 22%); font-weight: 800; font-size: 600px; position: absolute; top: 45%; left: 50%; transform: translate(-50%,-50%);}
+.page-not-found-inr{position: relative; display: flex; width: 100%; align-items: center;}
+.not-found-desc{font-size: 20px; color: #212121; font-weight: 600; margin-bottom: 35px; line-height: 1.3;}
+/* Page not found end */
+
+/*case study page css start*/
+.case-study-box{padding-top: 150px; position: relative;}
+.cs-logo{width: 336px; height: 300px; background-color: #fff; display: flex; align-items: center; justify-content: center; position: absolute; top: 0; right: 0;}
+.cs-logo-img{background-color: #ECECEC; width: 152px; height: 152px; border-radius: 100%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 400; color: #212121;}
+.cs-info{padding: 60px 0;}
+.cs-title{max-width: 100%; color: #212121; font-size: 40px; font-weight: 700; margin-bottom: 40px;}
+.cs-title span{font-weight: 400;}
+/*.cs-info-box{max-width: 320px;}*/
+.cs-lbl{color: #616161; font-size: 22px; margin-bottom: 15px; line-height: 1.2em;}
+.cs-desc, .cs-desc p{font-size: 24px; color: #000; line-height: 1.3em; font-weight: 600;}
+.cs-desc p:not(:last-child){margin-bottom: 15px;}
+.cs-desc a[href^="http"],.cs-desc a[href^="www"]{word-break: break-all;}
+.cs-app_ul li{margin-bottom: 10px;}
+.cs-app_ul li:not(:last-child){margin-right: 10px;}
+/* case-study-menu */
+.case-study-menu {display: flex; align-items: center; margin-top: 50px; }
+.case-study-menu> li a {font-weight: 600; color: #212121; font-size: 14px; line-height: 17px; border: 2px solid #212121; padding: 11px 45px; border-radius: 30px; text-transform: capitalize; -webkit-transition: all .4s ease-in-out; -ms-transition: all .4s ease-in-out; -o-transition: all .4s ease-in-out; transition: all .4s ease-in-out; }
+.case-study-menu> li {margin-right: 10px; }
+.case-study-menu> li.active a {background-color: #D11D3A; color: #fff; border: 2px solid transparent; box-shadow: -7.87px 4.5px 5.62px rgb(0 0 0 / 10%); }
+/*case study page css end*/
+
+/*engagement modal page css start*/
+.ourZigZagDesc ul{margin-top: 60px;}
+.ourZigZagDesc ul li{color: #212121; font-size: 18px; line-height: 1.4; margin-bottom: 25px; position: relative; padding-left: 35px; font-weight: 500;}
+.ourZigZagDesc ul li:before{content: ""; position: absolute; top: 9px; left: 5px; width: 7px; height: 7px; background-color: #D11D3A; border-radius: 100%;}
+.engagement-modal-div .ourZigZagRow:nth-child(odd) .ourZigZagTextDiv{padding-left: 70px;}
+.engagement-modal-div .ourZigZagRow:nth-child(even) .ourZigZagTextDiv{padding-right: 70px;}
+.engagement-modal-div .ourZigZagTextDiv{padding-top:60px; padding-bottom: 60px;}
+
+.ourZigZagImgDiv{position: relative;}
+.ourZigZagImgDiv[data-label]:before{content: attr(data-label); font-size: 14px; color: #fff; font-weight: 400; text-transform: uppercase; line-height: 33px; padding: 0 25px; border: 1px solid #212121; background-color: #212121; border-radius: 5px 5px 5px 0px; text-align: center; z-index: 1; position: absolute; top: 22px; left: 22px;}
+.ourZigZagImgDiv[data-label]:after{content: ""; position: absolute; top: 55px; left: 22px; width: 0; height: 0; border: 0 solid transparent; border-left-width: 0px; border-right-width: 16px; border-top: 12px solid #212121;}
+/*engagement modal page css end*/
+
+/*Thankyou text csss start*/
+/*.thankyouText:after{content: attr(data-text); font-family: 'Playfair Display', serif; color: #fff; text-shadow: 0px 0px 2px rgb(33 33 33 / 22%); font-weight: 800; font-size: 600px; position: absolute; top: 45%; left: 50%; transform: translate(-50%,-50%);}*/
+.popBody.thankyouText{background-image: url("../images/hands.png"), url("../images/thank-you.png"); background-repeat: no-repeat; background-position: bottom left;background-image: none;}
+.popBody.thankyouText:before{background-color: transparent;}
+/*Thankyou text csss end*/
+
+/*portfolio detail css start*/
+.innerPageWithLogoWrap{display: flex; flex-wrap: wrap; align-items: flex-start; max-width: 100%;}
+.innerPageWithLogoWrap .smallTitle{width: 100%;margin-bottom: 30px;}
+.innerPageWithLogo{display: inline-flex; flex-wrap: wrap; width: calc(100% - 157px); align-items: center;}
+.innerPageWithLogo .innerPageTitle{width: 100%;}
+.innerPageWithLogo .innerPageRedtxt{width: 100%;}
+.innerPageWithLogo .innerPageSubTxt{width: 100%}
+.innerPageLogoDiv{display: inline-flex; width: 152px; height: 152px; align-items: center; justify-content: center; border-radius: 50%; background:#ECECEC;}
+.portFolioDetailImgDiv{background: #F3F3F3}
+.portFolioDetailSec .cs-info{border-bottom: 1px solid rgb(189 189 189 / 50%);}
+.portFolioDetailSec .cs-info-box{margin-bottom: 50px;}
+.portFolioDetailSec .servQuoteDesc, .portFolioDetailSec .servQuoteDesc p{font-size: 24px; color: #000; line-height: 2;}
+.secTitleDesc.max-width-full{max-width: 100%;}
+.portfolio-grid.no-border{border: 0px;}
+.portFolioDetailSec .servQuoteDesc p ~ p {
+	padding-top: 30px;
+}
+.sectionTitleDiv .phaseSecDetail {
+	padding-top: 30px;
+}
+.phaseSecDetail .smallTitle {
+	color: #000000;
+	font-size: 22px;
+	line-height: 24px;
+	padding-top: 20px;
+}
+.achieveSec ul li {
+	font-weight: 700;
+	color: #000000;
+	line-height: 1.9em;
+}
+.achieveSec ul li:before {
+	top: 10px;
+	/*bottom: 0px;
+	margin: auto;*/
+}
+/*portfolio detail css end*/
+
+.case_study_wrap_sec{position: relative;}
+.case_study_wrap_sec .portfolioCompySec {position: absolute;right: 0;bottom: 0;z-index: 1;}
+.case_study_wrap_sec .aboutCompyCountInner{padding-bottom: 0;}
+.case_study_wrap_sec .aboutCompyCountInner:after{display: none !important;}
+.case_study_wrap_sec .aboutCompyCount{padding-left: 124px;background-color: rgb(0 0 0 / 75%) !important; mix-blend-mode: multiply;padding-bottom: 45px;}
+.case_study_wrap_sec .aboutCompyCtDtBox{max-width: 100%;}
+/* digital-marketing-services-start */
+.digital-marketing-services .innerPageTitle {
+    font-size: 45px;
+}
+.digital-marketing-services .servQuoteTxt i {
+    color: #DF1D3A;
+    font-weight: 500;
+    margin-top: 10px;
+}
+.digital-marketing-services .innerPageImgSec.blackBg {
+    background-color: transparent !important;
+}
+
+
+/*Pricing Type Popup css end*/
+.pricingType .popBody{background-color: #fff;}
+.pricingType .closePopup {right: 30px; top: 30px; width: 50px; height: 50px; background: #000; box-shadow: unset; }
+.pricingType .popBody{border-radius: 0;}
+.pricingType .popBody{max-width: 916px}
+.pricingType .popTxtDiv {max-width: 860px; margin: 90px 0 40px; }
+.pricingType .popTxtDiv .innerPageSubTxt{margin-bottom: 40px;}
+.pricingBtn{    border: 2px solid #212121; color: #212121; background: #fff; border-radius: 9px; box-shadow: 4px 6px 14px #00000026; opacity: 0.24; max-width: 298px; width: 100%; font-size: 18px; text-transform: initial; height: 69px;}
+.pricingTypeBtnDiv {margin-bottom: 50px;}
+.orTxt{color: #757575;font-size: 16px;    padding: 0 20px;}
+/*Pricing Type Popup css start*/
+
+/*---------Media Query-----------*/
+/* css only for hover effect all hover effect must write in this Media query */
+@media only screen and (min-width: 1200px) {
+	.portfolio-img a:hover img{transform: scale(1.03);}
+	.portfolio-title a:hover{color: #df1d3a;}
+	.closePopup:hover{background-color: #000;}
+	.full-height-popup .closePopup:hover{background-color: #df1d3a;}
+	.portfolio-detaillike a:hover{color:#212121;text-decoration: underline;}
+	.case-study-menu> li a:hover {background-color: #D11D3A; color: #fff; border: 2px solid transparent; box-shadow: -7.87px 4.5px 5.62px rgb(0 0 0 / 10%); }
+	.pricingBtn:hover{opacity: 1;color: #212121;}
+}
+
+/* Custome responsive css start from here */
+
+/* common css for below screen 1366 */
+@media only screen and (max-width: 1366px) {
+	.testimonialSec.innercommonSpace .testi-detail,.testimonialSec.innercommonSpace .testi-detail p{font-size: 24px; line-height: 1.6em;}
+	.t-comment p{font-size: 20px;}
+	.zigzag-title, .portfolio-title{font-size: 36px;}
+	.portfolio-grid{margin-top: 70px; padding-top: 70px;}
+	.page-not-found-sec:before{font-size: 430px;}
+	.popTxtDiv .innerPageTitle, .popTxtDiv .innerPageRedtxt{font-size: 38px;}
+
+	.portFolioDetailSec .servQuoteDesc, .portFolioDetailSec .servQuoteDesc p{font-size: 22px; line-height: 1.6;}
+	.popBody.thankyouText{background-size: 100%;}
+}	
+/*1366px end*/
+
+/* common css for below screen 1365px */
+@media only screen and (max-width: 1365px) {
+	.zigzag-title, .portfolio-title, .zigzag-desc{margin-bottom: 40px;}
+	.zigzag-desc{font-size: 20px; line-height: 1.5;}
+	.zigzag-row{align-items: flex-start;}	
+	.page-not-found-sec:before{font-size: 380px;}
+
+	.case-study-box{padding-top: 125px;}
+	.cs-title{font-size: 36px;}
+	.cs-desc, .cs-desc p{font-size: 22px;}
+	.cs-lbl{font-size: 20px;}
+	.cs-logo{width: 286px; height: 250px;}
+
+}
+/*1365px end*/
+/* common css for below screen 1199 */
+@media only screen and (max-width: 1199px) {
+	.innerPageSecTitle.paddingBtm_70, .paddingBtm_70{padding-bottom: 50px;}
+	.testimonial-box{margin-bottom: 60px;}
+	.t-img{max-width: 115px; margin-bottom: 35px; min-height: 100px;}
+	.t-img img{max-height: 70px;}
+	.t-comment{margin-bottom: 25px;}
+	.t-comment p, .testimonialSec.innercommonSpace .testi-detail,.testimonialSec.innercommonSpace .testi-detail p{font-size: 20px;}	
+
+	.zigzag-row:nth-child(odd) .zig-txt-col{padding-left: 50px; padding-right: 25px;}
+	.zigzag-row:nth-child(even) .zig-txt-col{padding-right:50px; padding-left: 25px;}
+	.zigzag-title, .portfolio-title{font-size: 32px;}
+	.zigzag-title, .portfolio-title, .zigzag-desc{margin-bottom: 25px;}
+	.zigzag-desc{font-size: 18px;}
+	.greyRound{width: 80px; height: 80px;}
+	.portfolio-txt{padding: 40px 20px;}
+	.portfolio-grid{margin-top: 60px; padding-top: 60px;}
+
+	.not-found-desc{margin-bottom: 20px;}
+	.page-not-found-sec:before{font-size: 310px;}
+
+	.case-study-box{padding-top: 100px;}
+	.cs-logo{width: 250px; height: 200px;}
+	.cs-logo-img{width: 110px; height: 110px;}
+	.cs-info{padding: 40px 0;}
+	.cs-title{font-size: 28px;}
+	.cs-desc, .cs-desc p{font-size: 20px;}
+	.cs-lbl{font-size: 18px;}
+	.case_study_wrap_sec .aboutCompyCount{    padding-left: 80px;}
+
+
+	.ourZigZagRow{padding: 0 30px;}
+	.ourZigZagDesc ul{margin-top: 35px;}
+	.engagement-modal-div .ourZigZagTextDiv, .engagement-modal-div .ourZigZagRow:nth-child(odd) .ourZigZagTextDiv, .engagement-modal-div .ourZigZagRow:nth-child(even) .ourZigZagTextDiv{padding: 50px;}	
+	.ourZigZagDesc ul li{margin-bottom: 20px; padding-left: 30px; font-size: 16px;}	
+	.ourZigZagDesc ul li:before{top: 8px;}
+
+	.full-height-popup .closePopup{width: 30px; height: 30px; top: 20px; right: 20px;}
+	.label-black{padding: 0 20px; margin-bottom: 25px;}
+	.full-height-popup .popBody{max-width: 60%;}
+	.popTxtDiv .innerPageTitle, .popTxtDiv .innerPageRedtxt{font-size: 34px;}
+	.popTxtDiv .innerPageSubTxt{margin: 25px 0 50px;}
+
+	.pop-share-desc{font-size: 26px;}
+	.pop-share-title{font-size: 14px;}
+	.portFolioDetailSec .cs-info-box{margin-bottom: 40px;}
+
+	.portFolioDetailSec .servQuoteDesc, .portFolioDetailSec .servQuoteDesc p{font-size: 20px;}
+
+	.digital-marketing-services .innerPageTitle {font-size: 36px;}
+
+	/*Pricing Type Popup css start*/
+	.pricingType .closePopup{    width: 25px; height: 25px;}
+	.pricingType .popBody {max-width: 740px; }
+	.pricingType .popTxtDiv{max-width: 740px; }
+	.pricingBtn{height: 52px;max-width: 220px;font-size: 16px;    opacity: 1;}
+	.pricingTypeBtnDiv{max-width: 530px;}
+	/*Pricing Type Popup css end*/
+}
+/*1199px end*/
+
+/* common css for below screen 991 */
+@media only screen and (max-width: 991px) {
+	.whyServiceWrap + .sectionRedtxt { margin-top: 50px; }
+	.technologiessubdiv .secTitleDesc {margin: 20px 0px 30px 10px; }
+	.technologiessubdiv .cstbtn { margin: 0px 0px 0px 10px; }
+	.sectionmerchants-row .sectionmerchants-blog .merchants-number {font-size: 30px;}
+	.t-comment{margin-bottom: 20px;}
+	.t-comment p, .testimonialSec.innercommonSpace .testi-detail,.testimonialSec.innercommonSpace .testi-detail p{font-size: 16px; line-height: 1.5em;}
+	.testimonial-box{max-width: 95%;}	
+	.t-img{max-width: 110px; min-height: 80px;}
+	.t-img img{max-height: 65px;}
+	.zigzag-row:nth-child(odd) .zig-txt-col{padding-left: 40px; padding-right: 15px;}
+	.zigzag-row:nth-child(even) .zig-txt-col{padding-right:40px; padding-left: 15px;}
+	.zig-txt-col{padding-top: 35px; padding-bottom: 35px;}
+	.portfolio-txt{padding: 30px 15px;}
+	.zigzag-title, .portfolio-title{font-size: 28px;}
+	.portfolio-grid{margin-top: 45px; padding-top: 45px;}
+
+	.not-found-desc{font-size: 18px;}
+	.page-not-found-sec:before{font-size: 240px;}
+
+	.case-study-box{padding-top: 80px;}
+	.cs-logo{width: 210px; height: 160px;}
+	.cs-logo-img{width: 90px; height: 90px;}
+	.cs-info{padding: 40px 0;}
+	.cs-title{font-size: 24px; line-height: 1.3; margin-bottom: 25px;}
+	.cs-desc, .cs-desc p{font-size: 17px;}
+	.cs-lbl{font-size: 15px;}
+
+	.ourZigZagRow{padding: 0px;}
+	.ourZigZagDesc ul{margin-top: 25px;}
+	.engagement-modal-div .ourZigZagTextDiv, .engagement-modal-div .ourZigZagRow:nth-child(odd) .ourZigZagTextDiv, .engagement-modal-div .ourZigZagRow:nth-child(even) .ourZigZagTextDiv{padding: 30px;}	
+	.ourZigZagDesc ul li{margin-bottom: 15px; padding-left: 18px; font-size: 14px;}
+	.ourZigZagDesc ul li:before{left: 0px; width: 6px; height: 6px; top: 6px;}
+	.ourZigZagImgDiv:before {font-size: 12px; line-height: 30px; padding: 0 20px; border-radius: 4px 4px 4px 0px; top: 12px; left: 12px;}
+	.ourZigZagImgDiv:after{top: 42px; left: 12px; border-right-width: 14px; border-top: 10px solid #212121;}
+
+	.popTxtDiv .innerPageTitle, .popTxtDiv .innerPageRedtxt{font-size: 30px;}
+	.label-black{font-size: 12px; line-height: 30px; padding: 0 15px; border-radius: 4px;}
+	.popTxtDiv .innerPageSubTxt{margin: 25px 0 35px;}
+	.portFolioDetailSec .cs-info-box{margin-bottom: 30px;}
+	.portFolioDetailSec .servQuoteDesc, .portFolioDetailSec .servQuoteDesc p{font-size: 18px;}
+	.innerPageLogoDiv{width: 125px; height: 125px;}
+	.innerPageWithLogo{padding-right: 25px; width: calc(100% - 125px);}	
+	.case_study_wrap_sec{display: flex;flex-wrap: wrap;    flex-direction: column-reverse;}	
+	.case_study_wrap_sec .portfolioCompySec{position: relative;right: inherit;bottom: inherit;width: 100%;}
+	.case_study_wrap_sec .aboutCompyCount{padding-left: 0;background-color:#212121 !important;}
+	.case_study_wrap_sec .aboutCompyCountBox{width: 50%;}
+	.case_study_wrap_sec .aboutCompyCountDetail{width: 50%;}
+	.case_study_wrap_sec .happyClientDiv{max-width: 100%;}
+	.case_study_wrap_sec .aboutCompyBtn{padding-left: 0;max-width: 100%;}
+	.digital-marketing-services .innerPageTitle i {
+		display: inline-block;
+	}
+
+	/*Pricing Type Popup css start*/
+	.pricingTypeBtnDiv {margin-bottom: 35px; }
+	.pricingType .popTxtDiv .innerPageSubTxt {margin-bottom: 35px; }
+	/*Pricing Type Popup css end*/
+	.decoglaze-logo.innerPageLogo {	display: flex;align-items: center;width: 90px; height: 90px; }
+}
+
+
+/* common css for below screen 767 */
+@media only screen and (max-width: 767px) {
+	.whyServiceWrap + .sectionRedtxt {margin-top: 30px;}
+	.t-comment p, .testimonialSec.innercommonSpace .testi-detail,.testimonialSec.innercommonSpace .testi-detail p{font-size: 14px;}
+	.t-img{max-width: 90px; margin-bottom: 25px;}
+	.innerPageSecTitle.paddingBtm_70, .paddingBtm_70{padding-bottom: 30px;}
+
+	.zigzag-row{flex-wrap: wrap;}
+	.zigzag-col{-ms-flex: 0 0 100%; flex: 0 0 100%; max-width: 100%;}
+	.zigzag-row:nth-child(odd) .zig-txt-col{padding-left: 25px; padding-right: 10px;}
+	.zigzag-row:nth-child(even) .zig-txt-col{padding-right:25px; padding-left: 10px;}
+	.zigzag-row:nth-child(odd) .zig-txt-col, .zigzag-row:nth-child(even) .zig-txt-col,  .zig-txt-col{padding: 25px;}
+	.zigzag-title, .portfolio-title{font-size: 24px;}
+	.zigzag-title, .portfolio-title, .zigzag-desc{margin-bottom: 15px;}
+	.zigzag-desc{font-size: 16px;}
+
+	.portfolio-grid{margin-top: 10px; padding-top: 35px;}
+	.portfolio-txt{padding: 20px 15px; margin-bottom: 20px;}
+
+	.not-found-desc{font-size: 16px;}
+	.page-not-found-sec:before{font-size: 180px;}
+
+	.case-study-box{padding-top: 55px;}
+	.cs-logo{width: 160px; height: 110px;}
+	.cs-logo-img {width: 70px; height: 70px; font-size: 16px; padding: 12px; }
+	.cs-info{padding: 30px 0;}
+	.cs-title{font-size: 22px; margin-bottom: 20px;}
+	.cs-desc, .cs-desc p{font-size: 16px;}
+	.cs-lbl{font-size: 14px;margin-bottom: 10px;}
+	.cs-info-box, .portFolioDetailSec .cs-info-box{margin-bottom: 25px;}
+
+	.engagement-modal-div .ourZigZagTextDiv, .engagement-modal-div .ourZigZagRow:nth-child(odd) .ourZigZagTextDiv, .engagement-modal-div .ourZigZagRow:nth-child(even) .ourZigZagTextDiv{padding: 0 0 30px 0;}
+	.full-height-popup .closePopup {width: 26px; height: 26px; top: 10px; right: 10px;}
+	.popTxtDiv{padding: 0 5%;}
+	.popTxtDiv .innerPageTitle, .popTxtDiv .innerPageRedtxt{font-size: 24px;}
+	.popTxtDiv .innerPageSubTxt, .popTxtDiv .innerPageSubTxt p, .popTxtDiv .innerPageSubTxt ul li{font-size: 14px;}
+	.popTxtDiv .innerPageSubTxt{margin: 20px 0 30px;}
+
+	.full-height-popup .popBody{max-width: 100%;}
+	.pop-share-desc{font-size: 24px;}
+	.portFolioDetailSec .servQuoteDesc, .portFolioDetailSec .servQuoteDesc p{font-size: 16px; line-height: 1.5;}
+
+	.innerPageLogoDiv{width: 100px; height: 100px;}
+	.innerPageWithLogo{padding-right: 25px; width: calc(100% - 100px);}	
+	.portfolio-title + .portfolio-detaillike{margin-top: 5px;}
+	.portfolio-detaillike a{font-size: 14px;}
+	.greyRound + .portfolio-detaillike{margin-top: 10px;}
+
+    .innerPageLogoDiv{width: 70px; height: 70px; font-size: 14px;}
+	.innerPageLogo {    width: 60px; height: 60px; padding: 10px; }
+
+	.innerPageWithLogo{padding-right: 25px; width: calc(100% - 70px);}	
+	
+	.case_study_wrap_sec .aboutCompyCount{padding-bottom: 30px;}
+	.keySecDetail [class*="col-"] ~ [class*="col-"] {
+		padding-top: 30px;
+	}
+	.digital-marketing-services .innerPageTitle {
+		font-size: 24px;
+	}
+
+	/*Pricing Type Popup css start*/
+	.pricingType .popTxtDiv .innerPageSubTxt {margin-bottom: 35px; }
+	/*Pricing Type Popup css end*/
+
+		.pricingType .popTxtDiv{margin: 20% 0 15%;}
+}	
+/*767px end*/
+
+/* common css for below screen 575 */
+@media only screen and (max-width: 575px) {
+	.sectionmerchants-row {display: block; margin: 0px 0px 0px 0px;}
+	.sectionmerchants-row .sectionmerchants-blog  {flex: inherit; margin: 15px 0px;}
+
+	.testimonial-box{max-width: 100%; margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px solid #BDBDBD; padding-top: 0px;}
+	.t-img{max-width: 100%; width: 100%; display: block;    min-height: auto; /*text-align: center; border: 5px solid #fff; margin: 0 auto 25px; position: relative; width: 100px; height: auto; background-color: #fff; min-height: auto;*/}
+	/*.t-img img{max-width: 100px; border: 5px solid #fff;}*/
+	/*.testimonial-box:before{content: ''; width: 100px; height: 85px; background-image: url(../images/qoute_icon.svg); background-repeat: no-repeat; position: absolute; top: 0; left: 50%; right: 0; z-index: -1; -webkit-transform: scale(-1); -moz-transform: scale(-1); transform: scale(-1); margin-left: -65px;} */
+	.t-comment{margin-bottom: 30px;}
+	.t-comment p, .testimonialSec.innercommonSpace .testi-detail,.testimonialSec.innercommonSpace .testi-detail p{font-size: 16px; line-height: 1.4em;}
+	.testimonials-grid [class*='col-']:last-child .testimonial-box{margin-bottom: 0; border-bottom: 0px;}
+	.play-icon-spn{width: 72px; height: 72px; margin-right: 8px;}	
+	.play-icon-spn:before{width: 57px; height: 57px;}
+	.play-icon-spn:after{width: 41px; height: 41px;}
+	.zigzag-title, .portfolio-title{font-size: 22px;}
+	.play-icon {border-width: 6px 0 6px 12px; margin: 0px 0px 0px 3px; }
+	.zigzag-title small, .portfolio-title small{font-size: 60%;}
+	.zigzag-desc{font-size: 14px;}
+	.zigzag-row:nth-child(odd) .zig-txt-col, .zigzag-row:nth-child(even) .zig-txt-col, .zig-txt-col{padding: 25px 15px;}
+	.greyRound{width: 55px; height: 55px;}
+
+	.not-found-desc{font-size: 14px; margin-bottom: 15px;}
+	.page-not-found-sec:before{font-size: 120px;}
+
+	.case-study-box{padding-top: 50px;}
+	.cs-logo{width: 130px; height: 100px;}	
+	.cs-info{padding: 25px 0;}
+	.cs-title{font-size: 18px;}
+	.cs-desc, .cs-desc p{font-size: 16px;}
+	.cs-lbl{font-size: 14px;}
+	.cs-info-box, .portFolioDetailSec .cs-info-box{margin-bottom: 20px; max-width: 100%;}
+	.latestVideoDiv >img{height: 250px;}
+
+	.popTxtDiv .innerPageTitle, .popTxtDiv .innerPageRedtxt{font-size: 20px;}
+	.label-black{margin-bottom: 20px;}
+	.popTxtDiv{margin: 20% 0 15%;}	
+
+	.portFolioDetailSec .servQuoteDesc, .portFolioDetailSec .servQuoteDesc p{font-size: 14px;}
+	.case_study_wrap_sec .aboutCompyCountDetail{width: 100%;}
+	.case_study_wrap_sec .aboutCompyCountBox{width: 100%;}
+
+
+}
+
+/* common css for below screen 479 */
+@media only screen and (max-width: 479px) {
+/*Pricing Type Popup css start*/
+	.pricingBtn {height: 40px; font-size: 14px; max-width: initial; width: auto; border-width: 1px; }
+	.orTxt{padding: 0 10px;}
+	/*Pricing Type Popup css end*/
+}
+
+/* common css for below screen 400 */
+@media only screen and (max-width: 400px) {
+/*	.full-height-popup .popBody{max-width: 90%;}*/	
+}
+
+/* common css for below screen 350 */
+@media only screen and (max-width: 350px) {
+/*	.full-height-popup .popBody{max-width: 300px;}*/
+	.zigzag-title, .portfolio-title{font-size: 20px;}
+	.page-not-found-sec:before{font-size: 100px;}
+
+	/*Pricing Type Popup css start*/
+	.pricingBtn{min-width: 100px;}
+	/*Pricing Type Popup css end*/
+}
+
+
+/* common css for screen size between 480 to 767 */
+@media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+
+/* common css for screen size between 576 to 767 */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+	.popBody.thankyouText {background-image: url(../images/thank-you.png); background-size: 80%; background-position: bottom center;}
+}
+
+/* common css for screen size between 568 to 767 */
+@media only screen and (min-width: 568px) and (max-width: 767px) {}
+
+
+/* common css for screen size between 600 to 767 */
+@media only screen and (min-width: 600px) and (max-width: 767px) {}
+
+/* common css for screen size between 768 to 1199 */
+@media only screen and (min-width: 768px) and (max-width: 1199px) {}
+
+
+/* common css for screen size between 768 to 1023 */
+@media only screen and (min-width: 768px) and (max-width: 991px) {}
+
+
+/* common css for screen size between 1024 to 1199 */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* common css for screen size between 375 to 812 portrait */
+@media only screen and (min-width: 375px) and (max-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {}
+
+/* common css for screen size between 375 to 812 landscape*/
+@media only screen and (min-width: 375px) and (max-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {}

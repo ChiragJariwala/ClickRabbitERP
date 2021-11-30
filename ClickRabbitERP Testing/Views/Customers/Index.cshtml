@@ -1,0 +1,84 @@
+﻿@model IEnumerable<ClickRabbitERP_Testing.Models.CustomerViewModel>
+
+@{
+    ViewData["Title"] = "Customers List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="jumbotron text-center">
+
+    <p class="display-3">@ViewData["Title"]</p>
+
+    <p class="h3">
+        <a asp-action="Create">Create New</a>
+    </p>
+</div>
+    <table class="table" id="customerTable">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CompID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CompName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Compphone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Owner)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Creationdate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Activationdate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CompType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RelType)
+                </th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Compphone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Owner)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Creationdate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Activationdate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RelType)
+                    </td>
+                    <td>
+                        <a asp-action="Create" asp-route-id="@item.CompID">Edit</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <script>
+        $('#customerTable').dataTable({
+        });
+        
+    </script>

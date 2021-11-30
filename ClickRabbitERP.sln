@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClickRabbitERP Testing", "ClickRabbitERP Testing\ClickRabbitERP Testing.csproj", "{DD805CF8-9511-4D59-8A4E-0E235508A79D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD805CF8-9511-4D59-8A4E-0E235508A79D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD805CF8-9511-4D59-8A4E-0E235508A79D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD805CF8-9511-4D59-8A4E-0E235508A79D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD805CF8-9511-4D59-8A4E-0E235508A79D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4440492D-445D-46E7-8DAB-5C70C1F32771}
+	EndGlobalSection
+EndGlobal

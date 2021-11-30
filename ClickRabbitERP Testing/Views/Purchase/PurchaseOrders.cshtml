@@ -1,0 +1,88 @@
+﻿@model IEnumerable<ClickRabbitERP_Testing.Models.PurchaseOrderModel>
+
+@{
+    ViewData["Title"] = "PurchaseOrders";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="jumbotron">
+    <h1>PurchaseOrders</h1>
+
+    <p>
+        <a asp-action="PurchaseEntry">Create New</a>
+    </p>
+
+</div>
+
+<table class="table" id="Purchases">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.POID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VendorID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DocumentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VendorOrderNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VendorInvoiceNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedByUser)
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                @{
+                    <td>
+                        @Html.DisplayFor(modelItem => item.POID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.VendorID)
+                    </td>
+            }
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DocumentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorOrderNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorInvoiceNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedByUser)
+            </td>
+            <td>
+                <a asp-action="PurchaseEntry" asp-route-id="@item.POID">Edit</a> 
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+<script>
+    $('#Purchases').dataTable({
+    });
+
+</script>

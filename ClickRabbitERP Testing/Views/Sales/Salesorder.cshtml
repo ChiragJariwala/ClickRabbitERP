@@ -1,0 +1,68 @@
+﻿@model IEnumerable<ClickRabbitERP_Testing.Models.SalesOrderModel>
+
+@{
+    ViewData["Title"] = "Sales orders";
+}
+
+<div class="jumbotron text-center">
+
+    <p class="display-3">@ViewData["Title"]</p>
+
+    <p class="h3">
+        <a asp-action="Create">Create New</a>
+    </p>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SOID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PostingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DocumentDate)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedByUser)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SOID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DocumentDate)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedByUser)
+            </td>
+            <td>
+                <a asp-action="SalesEntry" asp-route-id="@item.SOID">Edit</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

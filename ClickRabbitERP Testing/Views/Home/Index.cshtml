@@ -1,0 +1,230 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+    var nameClaim = @User.Claims.ToList();
+}
+
+<div class="jumbotron">
+
+    <p class="display-3">Welcome  @nameClaim[2].Value @nameClaim[3].Value</p>
+    <h4 class="h2">User Type : @nameClaim[6].Value</h4>
+</div>
+
+
+<style>
+    .card-deck .card-secondary {
+        padding: 16px 16px 0;
+        margin: 16px;
+        border-radius: 0;
+    }
+
+        .card-deck .card-secondary:hover {
+            box-shadow: 0 40px 60px -20px rgba(12, 5, 62, 0.15);
+        }
+
+            .card-deck .card-secondary:hover .card-title {
+                color: #4e22d0;
+            }
+
+        .card-deck .card-secondary .card-body {
+            padding: 0;
+        }
+
+        .card-deck .card-secondary .card-img-top {
+            margin-bottom: 24px;
+            border-radius: 0px;
+        }
+
+        .card-deck .card-secondary .card-title {
+            color: #261c6a;
+            font-size: 20px;
+            line-height: 1.6;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .card-deck .card-secondary .card-text {
+            color: #261c6a;
+            font-size: 14px;
+            line-height: 1.71;
+            font-weight: 400;
+            padding-top: 16px;
+            margin-bottom: 16px;
+        }
+
+        .card-deck .card-secondary .card-footer {
+            padding: 9px 0 25px;
+            background: transparent;
+            border: 0;
+        }
+
+            .card-deck .card-secondary .card-footer .btn {
+                margin-right: -24px;
+            }
+</style>
+
+        <div class="mt-4">
+
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <div class="content-header">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <h1 class="m-0 display-4">Dashboard</h1>
+                            </div><!-- /.col -->
+                            <div class="col-sm-6">
+                                <ol class="breadcrumb float-sm-right">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item active">Dashboard v1</li>
+                                </ol>
+                            </div><!-- /.col -->
+                        </div><!-- /.row -->
+                    </div><!-- /.container-fluid -->
+                </div>
+                <!-- /.content-header -->
+                <div class="container-fluid">
+                    <!-- Small boxes (Stat box) -->
+                    <div class="row">
+                        <div class="col-lg-3 col-6">
+                            <div class="card-deck">
+                                <!-- small box -->
+                                <div class="card card-secondary rounded text-center">
+                                    <div class="card-body">
+                                        <div class="h2 card-header bg-transparent border-success h3">New Orders</div>
+                                        <div class="card-body ">
+                                            <div class="d-flex mx-5 mt-3 justify-content-between">
+                                                <h3 class="h3">150</h3>
+                                                <i class="ion ion-bag h3"></i>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <a href="sales/salesorder" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6">
+                            <div class="card-deck">
+                                <!-- small box -->
+                                <div class="card card-secondary rounded text-center">
+                                    <div class="card-body">
+                                        <div class="h2 card-header bg-transparent border-success h3">New Orders</div>
+                                        <div class="card-body ">
+                                            <div class="d-flex mx-5 mt-3 justify-content-between">
+                                                <h3 class="h3">150</h3>
+                                                <i class="ion ion-bag h3"></i>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <a href="sales.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6">
+                            <div class="card-deck">
+                                <!-- small box -->
+                                <div class="card card-secondary rounded text-center">
+                                    <div class="card-body">
+                                        <div class="h2 card-header bg-transparent border-success h3">New Orders</div>
+                                        <div class="card-body ">
+                                            <div class="d-flex mx-5 mt-3 justify-content-between">
+                                                <h3 class="h3">150</h3>
+                                                <i class="ion ion-bag h3"></i>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <a href="sales.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6">
+                            <div class="card-deck">
+                                <!-- small box -->
+                                <div class="card card-secondary rounded text-center">
+                                    <div class="card-body">
+                                        <div class="h2 card-header bg-transparent border-success h3">New Orders</div>
+                                        <div class="card-body ">
+                                            <div class="d-flex mx-5 mt-3 justify-content-between">
+                                                <h3 class="h3">150</h3>
+                                                <i class="ion ion-bag h3"></i>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <a href="sales.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="display-5">Actions</p>
+                    <hr>
+                    <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-4">
+
+                        <div class="col-3 text-center">
+                            <div class="card-deck">
+                                <div class="card card-secondary">
+                                    <a href="items.php">
+                                        <div class="card-text">
+                                            <p class="h3">
+                                                <i class="bi bi-plus-circle"></i>
+                                                Products
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card-deck">
+                                <div class="card card-secondary">
+                                    <a href="customers.php">
+                                        <div class="card-text">
+                                            <p class="h3">
+                                                <i class="bi bi-plus-circle"></i>
+                                                Customers
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card-deck">
+                                <div class="card card-secondary">
+                                    <a href="sales.php">
+                                        <div class="card-text">
+                                            <p class="h3">
+                                                <i class="bi bi-bag-check"></i>
+                                                Sales
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card-deck">
+                                <div class="card card-secondary">
+                                    <a href="#">
+                                        <div class="card-text">
+                                            <p class="h3">
+                                                <i class="bi bi-sliders"></i>
+                                                Settings
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+

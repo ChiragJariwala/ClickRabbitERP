@@ -1,0 +1,64 @@
+﻿@model ClickRabbitERP_Testing.Models.VendorViewModel
+
+@{
+    ViewData["Title"] = "AddEditVendors";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>AddEditVendors</h1>
+
+<h4>CustomerViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddEditVendors">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CompName" class="control-label"></label>
+                <input asp-for="CompName" class="form-control" />
+                <span asp-validation-for="CompName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Compphone" class="control-label"></label>
+                <input asp-for="Compphone" class="form-control" />
+                <span asp-validation-for="Compphone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Owner" class="control-label"></label>
+                <input asp-for="Owner" class="form-control" />
+                <span asp-validation-for="Owner" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Creationdate" class="control-label"></label>
+                <input asp-for="Creationdate" class="form-control" />
+                <span asp-validation-for="Creationdate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Activationdate" class="control-label"></label>
+                <input asp-for="Activationdate" class="form-control" />
+                <span asp-validation-for="Activationdate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompType" class="control-label"></label>
+                <input asp-for="CompType" class="form-control" />
+                <span asp-validation-for="CompType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RelType" class="control-label"></label>
+                <input asp-for="RelType" class="form-control" />
+                <span asp-validation-for="RelType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

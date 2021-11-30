@@ -1,0 +1,75 @@
+﻿@model System.Data.DataTable
+
+@{
+    ViewData["Title"] = "Vendors";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="jumbotron text-center">
+
+<p class="display-3">@ViewData["Title"]</p>
+
+<p class="h3">
+    <a asp-action="Create">Create New</a>
+</p>
+</div>
+<table class="table" id="VendorList">
+    <thead>
+        <tr>
+            <th>
+
+                Company ID
+            </th>
+            <th>
+                Company Name
+            </th>
+            <th>
+                Company Phone
+            </th>
+            <th>
+                Company Owner
+            </th>
+            
+            <th>
+                CompType
+            </th>
+            <th>
+                RelType
+            </th>
+            <th> Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Rows.Count; i++)
+
+        {
+            <tr>
+                <td>
+                    @Model.Rows[i]["CompID"]
+                </td>
+                <td>
+                    @Model.Rows[i]["CompName"]
+                </td>
+                <td>
+                    @Model.Rows[i]["Compphone"]
+                </td>
+                <td>
+                    @Model.Rows[i]["Owner"]
+                </td>
+                
+                <td>
+                    @Model.Rows[i]["CompType"]
+                </td>
+                <td>
+                    @Model.Rows[i]["RelType"]
+                </td>
+                <td>
+                    <a asp-action="Create" asp-route-id="@Model.Rows[i]["CompID"]">Edit</a>
+                   
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script>
+    $("#VendorList").DataTable({});
+</script>

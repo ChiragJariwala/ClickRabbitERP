@@ -1,0 +1,94 @@
+﻿@model ClickRabbitERP_Testing.Models.Item
+
+@{
+
+    ViewData["Title"] = Model.ProductCode==0?"Create item":"Update item";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="mt-5">@ViewData["Title"]</h1>
+
+<hr />
+<div class="">
+    <div class="">
+        <form asp-action="Create" autocomplete="off">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row row-cols-3">
+
+                <div class="form-group col">
+                    <label asp-for="ProductCode" class="control-label"></label>
+                    <input asp-for="ProductCode" class="form-control" readonly />
+                    <span asp-validation-for="ProductCode" class="text-danger"></span>
+                </div>
+                <div class="form-group col">
+                    <label asp-for="ProductName" class="control-label"></label>
+                    <input asp-for="ProductName" class="form-control" />
+                    <span asp-validation-for="ProductName" class="text-danger"></span>
+                </div>
+                <div class="form-group col">
+                    <label asp-for="MenuFacturerCode" class="control-label"></label>
+                    <select asp-for="MenuFacturerCode" class="form-control">
+                        <option value="0" selected disabled>-- select --</option>
+                        <option value="1">Pfizer UK</option>
+                        <option value="2">AstraZeneca</option>
+                    </select>
+                    <span asp-validation-for="MenuFacturerCode" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row row-cols-3">
+                <div class="form-group col">
+                    <label asp-for="CatagoryCode" class="control-label"></label>
+                    <select asp-for="CatagoryCode" class="form-control">
+                        <option value="0" selected disabled>-- select --</option>
+                        <option value="1">Brand</option>
+                        <option value="2">Generic</option>
+                        <option value="3">Prescription Only Medicine</option>
+                    </select>
+                    <span asp-validation-for="CatagoryCode" class="text-danger"></span>
+                </div>
+                <div class="form-group col">
+                    <label asp-for="TradePrice" class="control-label"></label>
+                    <input type="number" asp-for="TradePrice" class="form-control" />
+                    <span asp-validation-for="TradePrice" class="text-danger"></span>
+                </div>
+                <div class="form-group col">
+                    <label asp-for="ManufactureDiscount" class="control-label"></label>
+                    <input type="number" asp-for="ManufactureDiscount" class="form-control" />
+                    <span asp-validation-for="ManufactureDiscount" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row row-cols-4">
+
+            <div class="form-group col">
+                <label asp-for="ProductLicenceNumber" class="control-label"></label>
+                <input asp-for="ProductLicenceNumber" class="form-control" />
+                <span asp-validation-for="ProductLicenceNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group col">
+                <label asp-for="SGST" class="control-label"></label>
+                <input type="number" asp-for="SGST" class="form-control" />
+                <span asp-validation-for="SGST" class="text-danger"></span>
+            </div>
+                <div class="form-group col">
+                    <label asp-for="CGST" class="control-label"></label>
+                    <input type="number" asp-for="CGST" class="form-control" />
+                    <span asp-validation-for="CGST" class="text-danger"></span>
+                </div>
+                <div class="form-group col">
+                    <label asp-for="HSNCode" class="control-label"></label>
+                    <input asp-for="HSNCode" class="form-control" />
+                    <span asp-validation-for="HSNCode" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
