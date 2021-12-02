@@ -84,6 +84,7 @@ namespace ClickRabbitERP_Testing.Controllers
         [Authorize]
         public async Task<IActionResult> Logout()
         {
+            
             await HttpContext.SignOutAsync();
             return Redirect("/");
 

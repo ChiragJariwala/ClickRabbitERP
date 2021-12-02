@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace ClickRabbitERP_Testing.Controllers
 {
-    [Authorize(Roles ="Admin,Purchase")]
+    [Authorize]
     public class VendorsController : Controller
     {
         private readonly ERPDbContext _db;//danish panjuta
@@ -25,6 +25,7 @@ namespace ClickRabbitERP_Testing.Controllers
             this._configuration = configuration;
             this._db = db;
         }
+        [Authorize(Roles = "Admin,Purchase")]
         public IActionResult Index()
         {
             DataTable dt = new DataTable();
@@ -42,8 +43,8 @@ namespace ClickRabbitERP_Testing.Controllers
             //Vendors = _db.VendorMaster.ToList();
             //return View(Vendors);
         }
-       
-       
+
+        [Authorize(Roles = "Admin")]
         public IActionResult Create(int? id)
         {
             VendorViewModel VendorModel = new VendorViewModel();
@@ -55,6 +56,7 @@ namespace ClickRabbitERP_Testing.Controllers
         }
         
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public IActionResult Create(int id, [Bind("CompID,CompName,Compphone,Owner,Creationdate,Activationdate,CompType,RelType")] VendorViewModel VendorModel)
         {
@@ -117,6 +119,7 @@ namespace ClickRabbitERP_Testing.Controllers
      
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public IActionResult Delete(int id)
         {
             var obj = _db.VendorMaster.Find(id);

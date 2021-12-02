@@ -17,7 +17,7 @@ using System.Text;
 
 namespace ClickRabbitERP_Testing.Controllers
 {
-    [Authorize(Roles = "Admin,Purchase")]
+    [Authorize]
     public class PurchaseController : Controller
     {
         //private readonly ERPDbContext _db;
@@ -33,6 +33,7 @@ namespace ClickRabbitERP_Testing.Controllers
             _webHost = webHost;
             this._configuration = configuration;
         }
+
         public IActionResult Index()
         {
             return View();
@@ -43,7 +44,7 @@ namespace ClickRabbitERP_Testing.Controllers
 
             return View();
         }
-
+        [Authorize(Roles ="Admin,Purchase")]
         [HttpGet]
         public IActionResult PurchaseEntry(int? id)
         {
@@ -84,8 +85,8 @@ namespace ClickRabbitERP_Testing.Controllers
             
         }
 
-        
 
+        [Authorize(Roles = "Admin,Purchase")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult PurchaseEntry(PurchaseOrderModel purchaseOrder)
@@ -96,7 +97,7 @@ namespace ClickRabbitERP_Testing.Controllers
             return RedirectToAction("PurchaseOrders");
         }
 
-
+        [Authorize(Roles = "Admin,Purchase")]
         public IActionResult updatePO(PurchaseOrderModel purchaseOrder)
         {
             
@@ -105,7 +106,7 @@ namespace ClickRabbitERP_Testing.Controllers
                  return RedirectToAction("PurchaseOrders");
 
         }
-
+        [Authorize(Roles = "Admin,Purchase")]
         [HttpPost]
         public IActionResult updatePOLine(PurchaseLineModel purchaseOrder)
         {
@@ -114,8 +115,8 @@ namespace ClickRabbitERP_Testing.Controllers
             return RedirectToAction("PurchaseOrders");
 
         }
-        
 
+        [Authorize(Roles = "Admin,Purchase")]
         public IActionResult DeletePurchaseLines(int? id, string returnUrl)
         {
             bool result = false;
@@ -170,7 +171,7 @@ namespace ClickRabbitERP_Testing.Controllers
 
         //}
 
-
+        [Authorize(Roles = "Admin,Purchase")]
         public IActionResult DeletePo(int? id)
         {
             if(id== null || id==0)
@@ -189,6 +190,7 @@ namespace ClickRabbitERP_Testing.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,Purchase")]
         public IActionResult DeletePoPost(int? id)
         {
             var obj = _db.PurchaseOrderMaster.Find(id);
@@ -201,6 +203,7 @@ namespace ClickRabbitERP_Testing.Controllers
             return RedirectToAction("PurchaseOrders");
         }
 
+        [Authorize(Roles = "Admin,Purchase")]
         public IActionResult PurchaseOrders()
         {
             List<PurchaseOrderModel> PoList;
@@ -245,6 +248,7 @@ namespace ClickRabbitERP_Testing.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin,Purchase")]
         public JsonResult updateLineRate(int? cid)
         {
             //DataTable dt = new DataTable();
