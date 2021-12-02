@@ -2,20 +2,35 @@
 
 @{
     ViewData["Title"] = "SalesEntry";
+    var nameClaim = @User.Claims.ToList();
 }
 
 <h1>SalesEntry</h1>
 
 <h4>SalesOrderModel</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="SalesEntry">
+<form asp-action="SalesEntry">
+    <div class="row clearfix">
+        <div class="col-md-4">
+            <input asp-for="SOID" hidden />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="SOID" />
             <div class="form-group">
-                <label asp-for="CustomerID" class="control-label"></label>
-                <select asp-for="CustomerID" asp-items="@(new SelectList(ViewBag.ActList,"CompID","CompName"))" class="form-control"></select>
+                @if (Model.SOID == 0)
+                {
+                    <label asp-for="CustomerID"
+                           class="control-label"></label>
+                    <select asp-for="CustomerID" asp-items="@(new SelectList(ViewBag.ActList,"CompID","CompName"))" class="form-control"></select>
+                }
+                else
+                {
+                    <label asp-for="CustomerID"
+                           class="control-label"></label>
+                    <select asp-for="CustomerID" asp-items="@(new SelectList(ViewBag.ActList,"CompID","CompName"))" class="form-control"></select>
+
+                    @*<input asp-for="VendorID" class="form-control" />*@
+                    @*<select asp-for="VendorID" asp-items="@(new SelectList(ViewBag.ActList,"CompID","CompName"))" class="form-control"></select>*@
+                }
+
 
                 <span asp-validation-for="CustomerID" class="text-danger"></span>
             </div>
@@ -39,199 +54,198 @@
                 <input asp-for="SalesOrderNumber" class="form-control" />
                 <span asp-validation-for="SalesOrderNumber" class="text-danger"></span>
             </div>
+            
             <div class="form-group">
                 <label asp-for="CreatedByUser" class="control-label"></label>
-                <input asp-for="CreatedByUser" class="form-control" />
+                @if (Model.SOID == 0)
+                {
+                    <input asp-for="CreatedByUser" class="form-control" value="@nameClaim[2].Value" readonly />
+
+                }
+                else
+                {
+
+                    <input asp-for="CreatedByUser" class="form-control" readonly />
+                }
+
                 <span asp-validation-for="CreatedByUser" class="text-danger"></span>
             </div>
+        </div>
+        <div class="form-group">
+            <table id="PoTable" class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
 
+                        <th class="hidden">
+                            TransactionID
+                        </th>
+                        <th class="hidden">
+                            SourceNumber
+                        </th>
 
-            <div class="form-group">
-                <table id="PoTable" class="table table-striped">
-                    <thead class="thead-dark">
-                        <tr>
+                        <th>
+                            CreationDate
+                        </th>
+                        <th>
+                            ProductID
+                        </th>
+                        <th>
+                            ProductQty
+                        </th>
+                        <th>
+                            ProducrPrice
+                        </th>
+                        <th>
+                            DocLineNumber
+                        </th>
+                        <th>
+                            SGST
+                        </th>
+                        <th>
+                            CGST
+                        </th>
 
-                            <th class="hidden">
-                                [TransactionID]
-                            </th>
-                            <th class="hidden">
-                                [SourceNumber]
-                            </th>
+                        <th>
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
 
-                            <th>
-                                [CreationDate]
-                            </th>
-                            <th>
-                                [ProductID]
-                            </th>
-                            <th>
-                                [ProductQty]
-                            </th>
-                            <th>
-                                [ProducrPrice]
-                            </th>
-                            <th>
-                                [DocLineNumber]
-                            </th>
-                            <th>
-                                [SGST]
-                            </th>
-                            <th>
-                                [CGST]
-                            </th>
-                            <th>
-                                [QuantityToPost]
-                            </th>
-                            <th>
-                                [PostedQty]
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        @for (int i = 0; i < Model.SalesLines.Count; i++)
-                        {
-                            <tr class="TableRow">
-                                <td class="hidden">
-                                    @Html.EditorFor(x => x.SalesLines[i].TransactionID, new
-                                    {
-                                        htmlAttributes = new
-                               {
-                                   @class = "form-control TransId hidden",
-
-                                        }
-                               })
-                                </td>
-                                <td class="hidden">
-                                    @Html.EditorFor(x => x.SalesLines[i].SourceNumber, new
-                                    {
-                                        htmlAttributes = new
-                               {
-                                   @class = "form-control",
-                                   @readonly = "readonly "
-                               }
-                               })
-                                </td>
-                                <td>
-                                    @Html.EditorFor(x => x.SalesLines[i].CreationDate, new
-                                    {
-                                        htmlAttributes = new
-                               {
-                                   @class = "form-control",
-
-                                        }
-                               })
-                                </td>
-                                <td>
-                                    <select asp-for="SalesLines[i].ProductID" asp-items="@(new SelectList(ViewBag.ilist,"ProductCode","ProductName"))" class="form-control"></select>
-
-                                </td>
-                                <td>
-                                    @Html.EditorFor(x => x.SalesLines[i].ProductQty, new
-                                    {
-                                        htmlAttributes = new
-                               {
-                                   @class = "form-control",
-
-                                        }
-                               })
-                                    @Html.ValidationMessageFor(x => x.SalesLines[i].ProductQty)
-                                </td>
-                                <td>
-                                    @Html.EditorFor(x => x.SalesLines[i].ProducrPrice, new
-                                    {
-                                        htmlAttributes = new
-                               {
-                                   @class = "form-control Text",
-
-                               }
-                               })
-                                </td>
-                                <td>
-                                    @*<input type="number" readonly id="LineNumber-@i"/>*@
-                                    @Html.EditorFor(x => x.SalesLines[i].DocLineNumber, new
-                                    {
+                    @for (int i = 0; i < Model.SalesLines.Count; i++)
+                    {
+                        <tr class="TableRow">
+                            <td class="hidden">
+                                @Html.EditorFor(x => x.SalesLines[i].TransactionID, new
+                                {
                                     htmlAttributes = new
-                                    {
-                                    @class = "form-control",
-                                    @readonly = "readonly"
+                           {
+                               @class = "form-control TransId",
 
                                     }
-                                    })
-                                </td>
-                                <td>
-                                    @Html.EditorFor(x => x.SalesLines[i].SGST, new
-                                    {
-                                        htmlAttributes = new
-                               {
-                                   @class = "form-control Text",
+                           })
+                            </td>
+                            <td class="hidden">
+                                @Html.EditorFor(x => x.SalesLines[i].SourceNumber, new
+                                {
+                                    htmlAttributes = new
+                           {
+                               @class = "form-control",
+                               @readonly = "readonly "
+                           }
+                           })
+                            </td>
+                            <td>
+                                @Html.EditorFor(x => x.SalesLines[i].CreationDate, new
+                                {
+                                    htmlAttributes = new
+                           {
+                               @class = "form-control",
 
-                               }
-                               })
-                                </td>
-                                <td>
-                                    @Html.EditorFor(x => x.SalesLines[i].CGST, new
-                                    {
-                                        htmlAttributes = new
-                               {
-                                   @class = "form-control Text",
-
-                               }
-                               })
-                                </td>
-                                <td>
-                                    @Html.EditorFor(x => x.SalesLines[i].QuantityToPost, new
-                                    {
-                                        htmlAttributes = new
-                               {
-                                   @class = "form-control Text",
-
-                               }
-                               })
-                                </td>
-                                <td>
-                                    @Html.EditorFor(x => x.SalesLines[i].PostedQty, new
-                                    {
-                                        htmlAttributes = new
-                               {
-                                   @class = "form-control Text",
-
-                               }
-                               })
-                                </td>
-                                <td>
-
-                                    <button id="btnAdd-@i" class="btn btn-rounded btn-outline-info visible" type="button" onclick="AddLine(this)">Add</button>
-                                    @if (@Model.SalesLines[i].TransactionID == 0)
-                                    {
-                                        @*<script>
-                                                window.alert("No id Generated");
-                                            </script>*@
                                     }
-                                    else
-                                    {
+                           })
+                            </td>
+                            <td>
+                                <select asp-for="SalesLines[i].ProductID" asp-items="@(new SelectList(ViewBag.ilist,"ProductCode","ProductName"))" class="form-control-lg border-info shadow prodID">
+                                </select>
 
-                                        @Html.ActionLink("Delete", "DeleteSalesLines", "Purchase", new { id = @Model.SalesLines[i].TransactionID }, new { @class = "btn btn-warning", @role = "button" })
+                            </td>
+                            <td>
+                                @Html.EditorFor(x => x.SalesLines[i].ProductQty, new
+                                {
+                                    htmlAttributes = new
+                           {
+                               @class = "form-control ",
+
+
                                     }
-                                    @*<a id="btnremove-@i" asp-route-id="@Model.SalesLines[i].TransactionID" class="btn btn-rounded btn-outline-info visible" onclick="ConfirmDelete(@Model.SalesLines[i].TransactionID)">Remove : @Model.SalesLines[i].TransactionID</a>*@
-                                    @*<butto id="btnremove-@i" asp-route-id="@Model.SalesLines[i].TransactionID" class="btn btn-rounded btn-outline-info visible" onclick="ConfirmDelete(@Model.SalesLines[i].TransactionID)">Remove : @Model.SalesLines[i].TransactionID</butto>*@
+                           })
+                                @Html.ValidationMessageFor(x => x.SalesLines[i].ProductQty)
+                            </td>
+                            <td>
+                                @Html.EditorFor(x => x.SalesLines[i].ProducrPrice, new
+                                {
+                                    htmlAttributes = new
+                           {
+                               @class = "form-control Text",
 
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
+                           }
+                           })
+                            </td>
+                            <td>
+                                @*<input type="number" readonly id="LineNumber-@i"/>*@
+                                @Html.EditorFor(x => x.SalesLines[i].DocLineNumber, new
+                                {
+                                htmlAttributes = new
+                                {
+                                @class = "form-control",
+                                @readonly = "readonly"
 
-            </div>
+                                }
+                                })
+                            </td>
+                            <td>
+                                @Html.EditorFor(x => x.SalesLines[i].SGST, new
+                                {
+                                    htmlAttributes = new
+                           {
+                               @class = "form-control Text",
 
-            <input type="hidden" id="hdnLastIndex" value="0">
-            <input type="hidden" id="hiddenTransNo">
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+                           }
+                           })
+                            </td>
+                            <td>
+                                @Html.EditorFor(x => x.SalesLines[i].CGST, new
+                                {
+                                    htmlAttributes = new
+                           {
+                               @class = "form-control Text",
+
+                           }
+                           })
+                            </td>
+
+                            <td>
+
+                                <button id="btnAdd-@i" class="btn btn-rounded btn-outline-info visible" type="button" onclick="AddLine(this)">Add</button>
+                                @if (@Model.SalesLines[i].TransactionID == 0)
+                                {
+                                    <a id="btnremove-@i" asp-route-id="@Model.SalesLines[i].TransactionID" class="btn btn-rounded btn-outline-info visible" onclick="ConfirmDelete(@Model.SalesLines[i].TransactionID)">Remove : @Model.SalesLines[i].TransactionID</a>
+                                }
+                                else
+                                {
+
+                                    @Html.ActionLink("Delete", "DeleteSalesLines", "Sales", new { id = @Model.SalesLines[i].TransactionID }, new { @class = "btn btn-warning", @role = "button" })
+                                }
+                                @*<a id="btnremove-@i" asp-route-id="@Model.SalesLines[i].TransactionID" class="btn btn-rounded btn-outline-info visible" onclick="ConfirmDelete(@Model.SalesLines[i].TransactionID)">Remove : @Model.SalesLines[i].TransactionID</a>*@
+                                @*<butto id="btnremove-@i" asp-route-id="@Model.SalesLines[i].TransactionID" class="btn btn-rounded btn-outline-info visible" onclick="ConfirmDelete(@Model.SalesLines[i].TransactionID)">Remove : @Model.SalesLines[i].TransactionID</butto>*@
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
+
+    <input type="hidden" id="hdnLastIndex" value="0">
+    <input type="hidden" id="hiddenTransNo">
+    <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
+    <div class="form-group">
+        @if (Model.SOID == 0)
+        {
+            <input type="submit" value="Create PO" class="btn btn-primary" />
+        }
+        else
+        {
+            @*<input type="submit" value="Save PO" class="btn btn-primary" />*@
+
+            <button type="submit" asp-action="updatePO" class="btn btn-outline-primary">Save</button>
+        }
+
+    </div>
+</form>
+
 
 <div>
     <a asp-action="Index">Back to List</a>
@@ -290,7 +304,8 @@
         console.log(newTrowIdx);
 
 
-
+        PoTable.lastElementChild.lastElementChild.cells[0].firstElementChild.value = 0;
+        PoTable.lastElementChild.lastElementChild.cells[3].firstElementChild.value = 0;
         for (var i = 4; i < 10; i++) {
             PoTable.lastElementChild.lastElementChild.cells[i].firstElementChild.value = 0;
 
@@ -312,4 +327,8 @@
 
 
     }
+    $(function () {
+        //Initialize Select2 Elements
+        $('.select2').select2()
+    })
 </script>

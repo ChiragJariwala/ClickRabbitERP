@@ -15,6 +15,7 @@ using System.Globalization;
 namespace ClickRabbitERP_Testing.Controllers
 {
     [Authorize]
+    [AutoValidateAntiforgeryToken]
     public class CustomersController : Controller
     {
         private readonly IConfiguration _configuration;
@@ -26,6 +27,7 @@ namespace ClickRabbitERP_Testing.Controllers
             this._configuration = configuration;
             this._db = db;
         }
+        [Authorize(Roles ="Admin,Sales")]
         
         public IActionResult Index()
         {
@@ -48,7 +50,7 @@ namespace ClickRabbitERP_Testing.Controllers
             return View(VendorModel);
         }
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult Create(CustomerViewModel VendorModel)
         {
@@ -63,7 +65,7 @@ namespace ClickRabbitERP_Testing.Controllers
             _db.SaveChanges();
             return RedirectToAction("Index");
         }
-
+        [Authorize(Roles = "Admin")]
         public IActionResult delete(CustomerViewModel Cust)
         {
 
